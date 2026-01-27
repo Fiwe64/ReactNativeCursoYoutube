@@ -1,11 +1,11 @@
-import { View, Text, Image, TextInput } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
 import { style } from "./style";
 import Logo from "../../assets/logo.png";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "../../themes/colors";
 
-const index = () => {
+const Login = () => {
   return (
     <View style={style.container}>
       <View style={style.boxTop}>
@@ -21,10 +21,12 @@ const index = () => {
         </View>
       </View>
       <View style={style.boxBottom}>
-        <TextInput />
+        <TouchableOpacity style={style.button}>
+          <Text>ENTRAR</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export default index;
+export default Login;
