@@ -1,6 +1,6 @@
 import { StyleSheet,Dimensions } from "react-native";
 import {colors} from "../../themes/colors"
-import { Button } from "react-native/types_generated/index";
+
 
 export const style = StyleSheet.create({
   container: {
@@ -11,7 +11,6 @@ export const style = StyleSheet.create({
   boxTop: {
     height:Dimensions.get('window').height/3,
     width:'100%',
-    backgroundColor:'red',
     alignItems:'center',
     justifyContent: 'center',
   },
@@ -45,10 +44,15 @@ export const style = StyleSheet.create({
     marginTop:10,
     borderWidth:1,
     flexDirection:"row",
+    alignItems:"center",
+    paddingHorizontal:10,
+    borderRadius:40,
   },
   input:{
-    width:"100%",
-    height:"100%"
+    width:"90%",
+    height:"100%",
+  
+    borderRadius:40,
   },
   button:{
     width:250,
@@ -74,6 +78,11 @@ elevation: 17,
   textButton:{
     fontSize:16,
     color:"white",
+    fontWeight:"bold",
+  },
+  textBotton:{
+    fontSize:16,
+    color:colors.gray,
     fontWeight:"bold",
   }
 });

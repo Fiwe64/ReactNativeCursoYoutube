@@ -14,6 +14,11 @@ const Login = () => {
       </View>
       <View style={style.boxMid}>
         <Text style={style.titleInput}>Endereço de Email</Text>
+        <View style={style.BoxInput}>
+          <TextInput style={style.input} />
+          <MaterialIcons name="email" size={20} color={colors.gray} />
+        </View>
+
         <Text style={style.titleInput}>Senha</Text>
         <View style={style.BoxInput}>
           <TextInput style={style.input} />
@@ -25,6 +30,8 @@ const Login = () => {
           <Text>ENTRAR</Text>
         </TouchableOpacity>
       </View>
+      <Text style={style.textBotton}>Não tem conta?</Text>
+      <Text style={{ color: colors.primary }}> Crie agora!</Text>
     </View>
   );
 };
