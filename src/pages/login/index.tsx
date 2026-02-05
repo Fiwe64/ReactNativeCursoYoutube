@@ -4,6 +4,7 @@ import { style } from "./style";
 import Logo from "../../assets/logo.png";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "../../themes/colors";
+import { Input } from "../../components/input";
 
 const Login = () => {
   return (
@@ -13,7 +14,9 @@ const Login = () => {
         <Text style={style.text}>Bem vindo de Volta</Text>
       </View>
       <View style={style.boxMid}>
-        <Text style={style.titleInput}>Endereço de Email</Text>
+        <Input/>
+        <Input/>
+        {/* <Text style={style.titleInput}>Endereço de Email</Text>
         <View style={style.BoxInput}>
           <TextInput style={style.input} />
           <MaterialIcons name="email" size={20} color={colors.gray} />
@@ -23,7 +26,7 @@ const Login = () => {
         <View style={style.BoxInput}>
           <TextInput style={style.input} />
           <MaterialIcons name="email" size={20} color={colors.gray} />
-        </View>
+        </View> */}
       </View>
       <View style={style.boxBottom}>
         <TouchableOpacity style={style.button}>
