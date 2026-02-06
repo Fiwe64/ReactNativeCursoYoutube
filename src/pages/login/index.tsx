@@ -1,12 +1,39 @@
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
-import React from "react";
+import {
+  View,
+  Text,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
+import React, { useState } from "react";
 import { style } from "./style";
 import Logo from "../../assets/logo.png";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons, Octicons } from "@expo/vector-icons";
 import { colors } from "../../themes/colors";
-import { Input } from "../../components/input";
+import { Input } from "../../components/Input";
+import Button from "../../components/Button";
 
-const Login = () => {
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  async function getLogin() {
+    setLoading(true);
+
+    try {
+      if (!email || !password) {
+        return Alert.alert("Digite o Email ou a Senha");
+      }
+
+      console.log("LOGOU!!!")
+    } catch (error) {
+      console.log(error);
+    }
+    setLoading(false);
+  }
   return (
     <View style={style.container}>
       <View style={style.boxTop}>
@@ -14,29 +41,28 @@ const Login = () => {
         <Text style={style.text}>Bem vindo de Volta</Text>
       </View>
       <View style={style.boxMid}>
-        <Input/>
-        <Input/>
-        {/* <Text style={style.titleInput}>Endereço de Email</Text>
-        <View style={style.BoxInput}>
-          <TextInput style={style.input} />
-          <MaterialIcons name="email" size={20} color={colors.gray} />
-        </View>
-
-        <Text style={style.titleInput}>Senha</Text>
-        <View style={style.BoxInput}>
-          <TextInput style={style.input} />
-          <MaterialIcons name="email" size={20} color={colors.gray} />
-        </View> */}
+        <Input
+          onChangeText={setEmail}
+          value={email}
+          title="EMAIL"
+          iconNameRight="email"
+          IconRight={MaterialIcons}
+        />
+        <Input
+          onChangeText={setPassword}
+          value={password}
+          title="PASSWORD"
+          IconRight={Octicons}
+          iconNameRight={showPassword ? "eye-closed" : "eye"}
+          secureTextEntry={showPassword}
+          onIconRightPress={() => setShowPassword(!showPassword)}
+        />
       </View>
       <View style={style.boxBottom}>
-        <TouchableOpacity style={style.button}>
-          <Text>ENTRAR</Text>
-        </TouchableOpacity>
+        <Button text="ENTRAR" loading={loading} onPress={getLogin} />
       </View>
       <Text style={style.textBotton}>Não tem conta?</Text>
       <Text style={{ color: colors.primary }}> Crie agora!</Text>
     </View>
   );
-};
-
-export default Login;
+}

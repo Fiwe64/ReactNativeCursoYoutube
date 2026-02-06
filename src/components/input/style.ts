@@ -22,6 +22,12 @@ export const style = StyleSheet.create({
         color:colors.gray,
         marginTop:20,
       },
+      icon:{
+        width:"100%"
+      },
+      button:{
+        width:"10%"
+      }
 });
 
 
