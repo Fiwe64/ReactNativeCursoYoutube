@@ -14,7 +14,7 @@ import { colors } from "../../themes/colors";
 import { Input } from "../../components/Input";
 import Button from "../../components/Button";
 
-export default function Login() {
+export default function Login({navigation}:any) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(true);
@@ -25,10 +25,14 @@ export default function Login() {
 
     try {
       if (!email || !password) {
+    
         return Alert.alert("Digite o Email ou a Senha");
       }
 
-      console.log("LOGOU!!!")
+      console.log("LOGOU!!!");
+      
+      navigation.navigate('List');
+      
     } catch (error) {
       console.log(error);
     }

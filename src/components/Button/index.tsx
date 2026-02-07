@@ -1,20 +1,24 @@
-import { ActivityIndicator, Text, TouchableHighlightProps, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, Text, TouchableHighlightProps, TouchableOpacity, TouchableOpacityProps, View } from 'react-native'
 import React from 'react'
 import { style } from './style'
 
-type Props = TouchableHighlightProps & {
+type Props = TouchableOpacityProps & {
     text:string,
     loading?:boolean,
 }
 
-export default function Button({...rest}:Props){
+export default function Button({text,loading,...rest}:Props){
     return (
         <TouchableOpacity 
         style={style.button}
-        {...rest}
         activeOpacity={0.6}
+        {...rest}
         >
-            {rest.loading?<ActivityIndicator/> :<Text style={style.textButton}>{rest.text}</Text>}
+           {loading ? (
+                <ActivityIndicator color="#FFF" /> 
+            ) : (
+                <Text style={style.textButton}>{text}</Text>
+            )}
         </TouchableOpacity>
     )
     

@@ -28,7 +28,7 @@ type Props = TextInputProps & {
   iconNameRight?: string;
   title?: string;
 
-  // "Callbacks" de clique (como o OnClickListener do Java)
+  //  "Callbacks" de clique (como o OnClickListener do Java)
   onIconLeftPress?: () => void;
   onIconRightPress?: () => void;
 };
@@ -36,7 +36,16 @@ type Props = TextInputProps & {
   
 
 export const Input = forwardRef<TextInput, Props>((props, ref) => {
-  const { title, IconLeft,IconRight, iconNameLeft,iconNameRight,onIconLeftPress,onIconRightPress, ...rest } = props;
+  const { 
+    title, 
+    IconLeft,
+    IconRight, 
+    iconNameLeft,
+    iconNameRight,
+    onIconLeftPress,
+    onIconRightPress, 
+    ...rest
+   } = props;
   const calcularTamanhoDoWidth = () => {
   if (IconLeft && IconRight){
     return '80%'
@@ -68,7 +77,7 @@ const calcularTamanhoDoPadding = () => {
           </TouchableOpacity>
           )}
           
-          //text input tendo o width alterado conforme a inclusao de icones atraves da funcao calcularTamanhoDoWidth
+          {/* text input tendo o width alterado conforme a inclusao de icones atraves da funcao calcularTamanhoDoWidth */}
           <TextInput 
                     style={[
                       style.input,{width:calcularTamanhoDoWidth()}]}
