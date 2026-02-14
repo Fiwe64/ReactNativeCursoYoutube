@@ -1,28 +1,18 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import List from "./src/pages/list";
+import { Navigation } from "./src/routes/index.routes";
 import Login from "./src/pages/login";
-
-//criando a pilha(Stack) que controla quem esta em cima de quem
-const Stack = createNativeStackNavigator();
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen
-          name="Login"
-          component={Login}
-        />
-        {/* <Stack.Screen 
-          name="List" 
-          component={List}
-          options={{title:'Listagem de Tarefas'}}  
-        /> */}
-      </Stack.Navigator>
-    </NavigationContainer>
+    
+
+     <SafeAreaProvider>
+      <Navigation/>
+      <StatusBar style="auto" />
+     </SafeAreaProvider>
+      
   );
 }
 

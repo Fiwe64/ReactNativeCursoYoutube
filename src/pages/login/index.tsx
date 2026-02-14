@@ -13,10 +13,13 @@ import { MaterialIcons, Octicons } from "@expo/vector-icons";
 import { colors } from "../../themes/colors";
 import { Input } from "../../components/Input";
 import Button from "../../components/Button";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Login({navigation}:any) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function Login() {
+  const navigation = useNavigation<any>();
+  
+  const [email, setEmail] = useState("a");
+  const [password, setPassword] = useState("a");
   const [showPassword, setShowPassword] = useState(true);
   const [loading, setLoading] = useState(false);
 
@@ -25,13 +28,13 @@ export default function Login({navigation}:any) {
 
     try {
       if (!email || !password) {
-    
+        setLoading(false);
         return Alert.alert("Digite o Email ou a Senha");
       }
 
       console.log("LOGOU!!!");
       
-      navigation.navigate('List');
+      navigation.navigate('BottomRoutes');
       
     } catch (error) {
       console.log(error);
