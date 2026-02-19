@@ -3,16 +3,20 @@ import { StyleSheet, Text, View } from "react-native";
 import { Navigation } from "./src/routes/index.routes";
 import Login from "./src/pages/login";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { TaskProvider } from "./src/contexts/TaskContext";
+import { ModalTarefas } from "./src/components/ModalTarefa";
+
+
 
 export default function App() {
-  return (
-    
-
-     <SafeAreaProvider>
-      <Navigation/>
+  return(
+    <SafeAreaProvider>
+      <TaskProvider>
+        <Navigation />
+        <ModalTarefas/>
+      </TaskProvider>
       <StatusBar style="auto" />
-     </SafeAreaProvider>
-      
+    </SafeAreaProvider>
   );
 }
 

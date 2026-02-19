@@ -25,6 +25,7 @@ const BottomRoutesConfig = createBottomTabNavigator({
     User: {
       screen:User,
       options:{
+        title:"usuario",
         headerShown: false,
       }
     },

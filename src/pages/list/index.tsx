@@ -8,7 +8,9 @@ export default function List (){
     const navigation = useNavigation<any>();
     return(
         <View style={style.container}>
-            <Text>Ola Mundo</Text>
+            <View style={style.lista}>
+            
+            </View>
             <Button text='Voltar' onPress={()=>navigation.navigate('Login')}/>
         </View>
     );

@@ -34,7 +34,7 @@ export default function Login() {
 
       console.log("LOGOU!!!");
       
-      navigation.navigate('BottomRoutes');
+      navigation.reset({routes:[{name:"BottomRoutes"}]});
       
     } catch (error) {
       console.log(error);

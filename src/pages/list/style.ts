@@ -5,9 +5,13 @@ import { colors } from "../../themes/colors";
 
 export const style = StyleSheet.create({
     container: {
-    flex: 1, // <--- Isso faz a View ocupar a tela inteira
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding:50,
     backgroundColor: '#F5F5F5'
   },
+  lista:{
+    
+  }
 })

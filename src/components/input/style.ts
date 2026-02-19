@@ -11,6 +11,8 @@ export const style = StyleSheet.create({
         alignItems: "center",
         paddingHorizontal: 10,
         borderRadius: 40,
+        borderColor: colors.lightgray,
+        backgroundColor:colors.bgScreen,
     }, input: {
         width: "90%",
         height: "100%",
