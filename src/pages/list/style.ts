@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import React from "react";
 import { colors } from "../../themes/colors";
 
@@ -6,12 +6,29 @@ import { colors } from "../../themes/colors";
 export const style = StyleSheet.create({
     container: {
     flex: 1,
-    justifyContent: 'center',
+  //justifyContent: 'center',
     alignItems: 'center',
-    padding:50,
-    backgroundColor: '#F5F5F5'
   },
-  lista:{
+  header:{
+    width:"100%",
+    height:Dimensions.get('window').height/6,
+    backgroundColor: colors.primary,
+    justifyContent: "center",
+    paddingHorizontal:20,
     
-  }
+
+  },
+  greeting:{
+    fontSize:20,
+    color: '#FFF',
+    marginTop:20,
+  },
+  boxInput:{
+    width:"80%"
+  },
+  boxList:{
+    flex:1,
+    width:"100%",
+    backgroundColor: "red"
+  },
 })
