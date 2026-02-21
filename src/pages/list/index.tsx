@@ -6,10 +6,12 @@ import { useNavigation } from '@react-navigation/native';
 import { Input } from '../../components/Input';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
+import { useTaskContext } from '../../contexts/TaskContext';
+import { TaskCard } from '../../components/TaskCard';
 
 export default function List (){
-    const navigation = useNavigation<any>();
-    import {setTasks} from "../../contexts/TaskContext"
+    const { tasks } = useTaskContext();
+
     return(
         <View style={style.container}>
             <View style={style.header}>
@@ -24,7 +26,19 @@ export default function List (){
 
             <View style={style.boxList}>
                 <FlatList
-                    data={}
+                    data={tasks}
+                    keyExtractor={(item) => item.id} // a ID única gerada no contexto
+                    contentContainerStyle={{paddingBottom: 100}} // Espaço pro CustomTabBar não cobrir o último item
+                    showsVerticalScrollIndicator={false}
+                    renderItem={({item})=>(
+                        <TaskCard data={item}/>
+                    )}
+                    ListEmptyComponent={() => (
+                        <View style={style.emptyBox}>\
+                            <Text style={style.emptyBox}>Nada por aqui Ainda!</Text>
+                            <Text style={style.emptySubText}> Clique em "+" para adicionar uma Tarefa.</Text>
+                        </View>
+                    )}
                 />
             </View>
             {/* <Button text='Voltar' onPress={()=>navigation.navigate('Login')}/> */}

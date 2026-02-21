@@ -13,6 +13,7 @@ interface Task{
 interface TaskContextProps{
     isModalOpen: boolean;
     openModal: ()=> void;
+    tasks: Task[];
     closeModal: ()=> void;
     createTask: (data: Omit<Task,'id'>)=>void;
 }
@@ -42,7 +43,7 @@ export function TaskProvider({children}:{children: ReactNode}){
     
 
     return(
-        <TaskContext.Provider value={{isModalOpen,openModal, closeModal,createTask}}>
+        <TaskContext.Provider value={{isModalOpen,tasks,openModal, closeModal,createTask}}>
             {children}
         </TaskContext.Provider>
     )

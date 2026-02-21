@@ -57,23 +57,26 @@ export const style = StyleSheet.create({
     flexDirection: 'row',
     gap: 12,
     marginBottom: 24,
+   
   },
   flagButton:{
-    flex:1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 12,
-    borderRadius: 12,
+    width: 60,
+    height: 20,
     backgroundColor: '#EAEAEA',
     gap: 8,
+    borderRadius: 4,
+    
   },
   flagSelected: {
-    backgroundColor: colors.primary || '#007AFF',
+    backgroundColor: colors.primary || '#FF494C',
   },
   flagText:{
     fontWeight: 'bold',
     color: '#333',
+    fontSize: 12
   },
   saveButton:{
     backgroundColor: colors.primary || '#007AFF',

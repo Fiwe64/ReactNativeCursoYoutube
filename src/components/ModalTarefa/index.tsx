@@ -107,7 +107,7 @@ export function ModalTarefas() {
             <Text style={style.label}>Descrição</Text>
             <TextInput
               style={[style.input, { height: 100, textAlignVertical: "top" }]}
-              placeholder="Ex: Estudar para a Prova"
+              placeholder="Ex: Assuntos: Logica de programação"
               value={description}
               onChangeText={setDescription}
             />
@@ -151,13 +151,13 @@ export function ModalTarefas() {
 
             {/* Seleção de Flags */}
 
-            <Text style={style.label}>Prioridade</Text>
+            <Text style={style.label}>Flags</Text>
             <View style={style.flagContainer}>
               {/*Flag Urgente */}
               <TouchableOpacity
                 style={[
                   style.flagButton,
-                  flag === "urgente" && style.flagSelected,
+                  flag === "urgente" && {backgroundColor: "#FF494C"},
                 ]}
                 onPress={() => setFlag("urgente")}
               >
@@ -170,10 +170,7 @@ export function ModalTarefas() {
                   Urgente
                 </Text>
               </TouchableOpacity>
-            </View>
-            {/*Flag Opcional */}
-            <Text style={style.label}>Opcional</Text>
-            <View style={style.flagContainer}>
+
               <TouchableOpacity
                 style={[
                   style.flagButton,
@@ -191,6 +188,7 @@ export function ModalTarefas() {
                 </Text>
               </TouchableOpacity>
             </View>
+            {/*Flag Opcional */}
 
             <TouchableOpacity style={style.saveButton} onPress={handleSave}>
               <Text style={style.saveButtonText}>Salvar Tarefa</Text>

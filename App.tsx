@@ -5,17 +5,18 @@ import Login from "./src/pages/login";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { TaskProvider } from "./src/contexts/TaskContext";
 import { ModalTarefas } from "./src/components/ModalTarefa";
-
-
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function App() {
-  return(
+  return (
     <SafeAreaProvider>
-      <TaskProvider>
-        <Navigation />
-        <ModalTarefas/>
-      </TaskProvider>
-      <StatusBar style="auto" />
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <TaskProvider>
+          <Navigation />
+          <ModalTarefas />
+        </TaskProvider>
+        <StatusBar style="auto" />
+      </GestureHandlerRootView>
     </SafeAreaProvider>
   );
 }

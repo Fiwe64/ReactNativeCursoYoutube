@@ -29,6 +29,22 @@ export const style = StyleSheet.create({
   boxList:{
     flex:1,
     width:"100%",
-    backgroundColor: "red"
+    paddingVertical: 20,
+
   },
+  emptyBox:{
+    alignItems: 'center',
+    marginTop: 60,
+  },
+  emptyText:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#888',
+  },
+  emptySubText:{
+    fontSize: 14,
+    color: "#AAA",
+    marginTop: 8,
+
+  }
 })
