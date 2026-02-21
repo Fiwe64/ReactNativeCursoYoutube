@@ -58,3 +58,5 @@ export function useTaskContext(){
     return context;
 }
 
+
+export default Task;
